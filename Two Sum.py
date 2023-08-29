@@ -5,9 +5,12 @@ class Solution(object):
         :type target: int
         :rtype: List[int]
         """
-        for i in range(len(nums)):
-            for j in range(i+1, len(nums)):
-                if nums[i] + nums[j] == target:
-                    return [i,j]
+        vals = {}
+        
+        for i, n in enumerate(nums):
+            diff = target - n
+            if diff in vals:
+                return [vals[diff], i]
+            vals[n] = i
 
 print(Solution().twoSum([3,3], 6))
