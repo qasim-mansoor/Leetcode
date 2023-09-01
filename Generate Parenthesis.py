@@ -8,21 +8,21 @@ class Solution(object):
 
         def rec(s, ob, cb):
             if ob == n and cb == n:
-                if s not in pars:
-                    pars.append(s)
+                # if s not in pars:
+                pars.append(s)
             
             if ob < n and cb < ob:
                 rec(s+"(", ob+1, cb)
                 rec(s+")", ob, cb+1)
 
-            if(ob < n):
+            elif(ob < n):
                 rec(s+"(", ob+1, cb)
             
-            if(cb < ob):
+            elif(cb < ob):
                 rec(s+")", ob, cb+1)
             
         rec("", 0, 0)
-        print(pars)
+        return pars
 
-print(Solution().generateParenthesis(2))
+print(Solution().generateParenthesis(3))
         
