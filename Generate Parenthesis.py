@@ -10,15 +10,11 @@ class Solution(object):
             if ob == n and cb == n:
                 # if s not in pars:
                 pars.append(s)
-            
-            if ob < n and cb < ob:
-                rec(s+"(", ob+1, cb)
-                rec(s+")", ob, cb+1)
 
-            elif(ob < n):
+            if(ob < n):
                 rec(s+"(", ob+1, cb)
             
-            elif(cb < ob):
+            if(cb < ob):
                 rec(s+")", ob, cb+1)
             
         rec("", 0, 0)
