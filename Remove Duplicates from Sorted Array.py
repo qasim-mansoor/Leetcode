@@ -1,12 +1,17 @@
-nums = [1,1,2]
+class Solution(object):
+    def removeDuplicates(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        uniq = 1
+        last = nums[0]
 
-for i in range(len(nums)-1):
-    while(nums[i] == nums[i+1]):
-        nums.remove(nums[i+1])
-    
-    if(len(nums)-2 == i):
-        break
+        for i in range(1,len(nums)):
+            if(nums[i] != last):
+                last = nums[i]
+                nums[uniq] = nums[i]
+                uniq += 1
 
-count = len(nums)
-print(count)
-print(nums)
+        
+        return uniq

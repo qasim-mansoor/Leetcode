@@ -7,28 +7,19 @@ class Solution(object):
         :type n: int
         :rtype: None Do not return anything, modify nums1 in-place instead.
         """
-        nums3 = []
-        i1 = 0
-        i2 = 0
-        for i in range(m+n):
-            if(nums1[i1] > nums2[i2]):
-                nums3.append(nums2[i2])
-                i2+=1
-            elif(nums1[i1] == 0 and i2 == n):
-                break
-            elif(nums1[i1] == 0):
-                nums3.append(nums2[i2])
-                i2+=1
-            else:
-                nums3.append(nums1[i1])
-                i1+=1
+        print(nums1, nums2)
+        while nums1[0] != 0:
+            if nums1[0] < nums2[0]:
+                nums1.append(nums1.pop(0))
+            else: 
+                nums1.append(nums2.pop(0))
+
+        while nums2:
+            nums1.append(nums2.pop(0))
+            
+        while nums1[0] == 0:
+            nums1.pop(0)
         
-        nums1 = nums3
         print(nums1)
 
-x = Solution()
-nums1 = [1]
-m = 1
-nums2 = []
-n = len(nums2)
-x.merge(nums1, m, nums2, n)
+Solution().merge([1,2,3,0,0,0], 3, [2,5,6], 3)
