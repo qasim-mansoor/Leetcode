@@ -1,17 +1,13 @@
-nums1 = [1,2,3,0,0,0]
-nums2 = [2,5,6]
+# print(ord('Z') - 64)
+s = 'BHX'
+# print(26*26 + 25)
+# print(26*26 + 26*26 + 26*1 + 1)
 
-while nums1[0] != 0:
-    # print(nums)
-    if nums1[0] < nums2[0]:
-        nums1.append(nums1.pop(0))
-    else: 
-        nums1.append(nums2.pop(0))
+col = 0
 
-while nums2:
-    nums1.append(nums2.pop(0))
-    
-while nums1[0] == 0:
-    nums1.pop(0)
+for i in range(1, len(s) + 1):
+    col += (26**(i-1))*(ord(s[-i]) - 64) 
 
-print(nums1)
+print(col)
+
+#AAA = 703
