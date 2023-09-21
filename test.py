@@ -1,5 +1,9 @@
-x  = {'h': 1, 'j': 2}
-y = {'j': 2, 'h': 1}
-z = ""
-if  z:
-    print(z)
+row = 1
+col = 1
+
+st1 = 0
+st2 = 0
+
+while st1 < row or st2 < col:
+    st1+=1
+    print(st1)
